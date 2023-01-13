@@ -20,7 +20,7 @@ bot.whitelist = [put user id here]
 
 @bot.event
 async def on_ready():
-    print("logged in as Skynet",)
+    print("Bot is ready",)
     presence.start()
 
 
@@ -63,7 +63,7 @@ async def restart(ctx):
     else:
         await ctx.respond("권한 부족!")
 
-# purge message command
+        
 @bot.slash_command(description="Purge messages")
 async def purge(ctx, amount: int):
     if ctx.author.id in bot.whitelist:
@@ -78,8 +78,6 @@ async def say(ctx, *, message):
     await ctx.respond(message)
 
 
-
-# get server status command (cpu, ram, disk) 
 @bot.slash_command(description="Get server status")
 async def status(ctx):
     
